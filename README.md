@@ -25,7 +25,6 @@
 | 🌐 IP Sorgu | Konum, ISP, ASN, Blacklist | ipinfo.io |
 | 🗺 Harita | IP konumunun harita üzerinde gösterimi | Leaflet + OpenStreetMap |
 | 🖥 DNS Sorgu | A, MX, NS, TXT, WHOIS | dnspython |
-| 🌍 Domain Sorgu | Domain WHOIS kaydı, kayıt bilgileri ve yaşı | python-whois |
 | 🔌 Port Tarama | TCP + Banner Grabbing | Native Python |
 | 📧 Email Analiz | MX, Gravatar, format kontrolü | Native |
 | 📱 Telefon Sorgu | Telefon numarası konum ve operatör bilgisi | Public API |
@@ -36,7 +35,6 @@
 ## 📝 Sürüm Notları — v0.0.2
 
 **✨ Yeni**
-- 🌍 Domain Sorgu modülü eklendi
 - 📱 Telefon Sorgu modülü eklendi
 - 🗺 Harita modülü eklendi (IP konumu harita üzerinde)
 
