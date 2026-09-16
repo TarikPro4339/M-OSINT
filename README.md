@@ -1,4 +1,4 @@
-# M-OSINT v0.0.1 (Alpha)
+# M-OSINT v0.0.2 (Alpha)
 
 > ⚠️ Bu araç **sadece eğitim amaçlıdır.** İzinsiz sistemlerde kullanmak yasaktır.
 
@@ -11,6 +11,8 @@
   ╚═╝     ╚═╝      ╚═════╝ ╚══════╝╚═╝╚═╝  ╚═══╝   ╚═╝
 ```
 
+**👤 Yapımcı:** [TarikPro43391](https://github.com/TarikPro43391)
+
 ---
 
 ## ⚡ Özellikler
@@ -21,10 +23,26 @@
 | 🦠 Infostealer | Zararlı yazılım tespiti | HudsonRock Cavalier |
 | 🔑 Şifre Kontrolü | k-Anonymity ile sızıntı tarama | HIBP PwnedPasswords |
 | 🌐 IP Sorgu | Konum, ISP, ASN, Blacklist | ipinfo.io |
+| 🗺 Harita | IP konumunun harita üzerinde gösterimi | Leaflet + OpenStreetMap |
 | 🖥 DNS Sorgu | A, MX, NS, TXT, WHOIS | dnspython |
+| 🌍 Domain Sorgu | Domain WHOIS kaydı, kayıt bilgileri ve yaşı | python-whois |
 | 🔌 Port Tarama | TCP + Banner Grabbing | Native Python |
 | 📧 Email Analiz | MX, Gravatar, format kontrolü | Native |
+| 📱 Telefon Sorgu | Telefon numarası konum ve operatör bilgisi | Public API |
 | 📡 Gerçek Zamanlı | WebSocket ile canlı tarama | Flask-SocketIO |
+
+---
+
+## 📝 Sürüm Notları — v0.0.2
+
+**✨ Yeni**
+- 🌍 Domain Sorgu modülü eklendi
+- 📱 Telefon Sorgu modülü eklendi
+- 🗺 Harita modülü eklendi (IP konumu harita üzerinde)
+
+**🐛 Düzeltildi**
+- Birkaç küçük hata düzeltildi
+- Arayüz ve kararlılık iyileştirmeleri yapıldı
 
 ---
 
@@ -33,7 +51,7 @@
 ### 1. Repoyu İndir
 
 ```bash
-git clone https://github.com/TarikPro4339/M-OSINT.git
+git clone https://github.com/TarikPro43391/M-OSINT.git
 ```
 
 ```bash
@@ -92,7 +110,7 @@ IPINFO_TOKEN = ""    # ipinfo.io
 
 ```
 Backend   → Python 3, Flask, Flask-SocketIO
-Frontend  → HTML, CSS, JavaScript
+Frontend  → HTML, CSS, JavaScript, Leaflet
 Servisler → LeakCheck.io, HudsonRock, HIBP, ipinfo.io
 ```
 
@@ -120,5 +138,5 @@ MIT License
 ---
 
 <div align="center">
-  <sub>M-OSINT v0.0.1 Alpha — Eğitim Amaçlı</sub>
+  <sub>M-OSINT v0.0.2 Alpha — Eğitim Amaçlı — Geliştirici: TarikPro43391</sub>
 </div>
