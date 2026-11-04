@@ -1,6 +1,0 @@
-flask
-flask-socketio>=5.3.0
-requests
-dnspython
-python-whois
-eventlet>=0.36.0
