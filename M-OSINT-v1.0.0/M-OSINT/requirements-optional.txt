@@ -1,0 +1,5 @@
+# Optional local adapters only. Install in a virtual environment (README).
+Pillow>=11.0,<13
+pypdf>=6.0,<7
+phonenumbers>=9.0,<10
+mutagen>=1.47,<2

@@ -1,0 +1,143 @@
+Bir OSINT (Açık Kaynak İstihbaratı) aracını hem işlevsel hem de modüler hale getirmek için özellikleri kategorilere ayırarak inşa etmek en temiz yöntemdir. Çoğu temel özelliği ekstra ücretli API'lere ihtiyaç duymadan, standart ağ kütüphaneleri, web kazıma (scraping), regex ve yerel veritabanları (OUI, GeoIP vb.) ile doğrudan kodlayabilirsin.
+
+Geliştirdiğin araca entegre edebileceğin **7 ana kategoride 105 temel özellik:**
+
+### 1. Ağ ve IP İstihbaratı (Network & IP)
+
+1. **IP Geolocation:** IP adresinden ülke, şehir, posta kodu ve koordinat tespiti.
+2. **ASN & ISP Sorgulama:** IP'nin bağlı olduğu Otonom Sistem Numarası ve internet servis sağlayıcısını bulma.
+3. **Ters IP (Reverse IP) Arama:** Aynı sunucuda (IP'de) barınan diğer web sitelerini listeleme.
+4. **MAC Adresi (OUI) Sorgulama:** MAC adresinin ilk 3 oktetinden cihaz üreticisini (Vendor) bulma.
+5. **Port Tarayıcı (Port Scanner):** Hedef IP üzerindeki açık TCP/UDP portlarını (21, 22, 80, 443, 3389 vb.) tarama.
+6. **Banner Grabbing:** Açık portlardan çalışan servislerin isim ve versiyon bilgilerini çekme.
+7. **VPN / Proxy / Tor Tespiti:** IP adresinin bilinen bir anonimleştirici ağa veya veri merkezine (Datacenter) ait olup olmadığını kontrol etme.
+8. **Kara Liste (Blacklist / DNSBL) Kontrolü:** IP'nin spam veya zararlı aktivite listelerinde olup olmadığını sorgulama.
+9. **Traceroute / Ağ Yolu Analizi:** Paketin hedefe ulaşana kadar geçtiği düğümleri (hop) haritalama.
+10. **Ping & Gecikme (Latency) Testi:** Hedef sunucunun aktiflik ve yanıt süresi kontrolü.
+11. **Alt Ağ (Subnet / CIDR) Hesaplayıcı:** Verilen IP bloğunun ağ aralığını ve kullanılabilir IP sayısını çıkarma.
+12. **IPv4 - IPv6 Dönüştürücü ve Çözümleyici:** IP formatları arası dönüşüm ve uyumluluk analizi.
+13. **Shodan / Censys Sorgu Üretici:** Hedef IP bloğu veya servis için hazır arama filtreleri (dork) oluşturma.
+14. **BGP Prefix Sorgulama:** Kurumun sahip olduğu tüm IP bloklarını listeleme.
+15. **Genel (Public) IP Bilgisi:** Aracı kullanan kişinin kendi dış IP ve ağ bilgisini göstermesi.
+
+---
+
+### 2. Alan Adı ve Web İstihbaratı (Domain & Web)
+
+16. **WHOIS Sorgulama:** Domain kayıt tarihi, bitiş tarihi ve kayıt kuruluşu (Registrar) bilgilerini çekme.
+17. **DNS Kayıt Analizi:** A, AAAA, MX, TXT, NS, CNAME ve SOA kayıtlarını tam listeleme.
+18. **Alt Alan Adı (Subdomain) Tespiti:** Sertifika şeffaflığı (crt.sh) veya kelime listesi (wordlist) ile alt alan adlarını bulma.
+19. **SSL/TLS Sertifika Analizi:** Sertifikanın kime verildiği, geçerlilik süresi ve alternatif isimlerini (SAN) inceleme.
+20. **HTTP Başlık (Header) Analizi:** Sunucudan dönen güvenlik başlıklarını (HSTS, CSP, X-Frame-Options) ve sunucu bilgisini okuma.
+21. **Web Teknoloji Tespiti (Tech Stack):** Sitede kullanılan CMS (WordPress vb.), JS kütüphaneleri ve web sunucusunu (Nginx, Apache) belirleme.
+22. **Robots.txt ve Sitemap.xml Okuyucu:** Arama motorlarından gizlenen dizinleri ve site haritasını otomatik çekip listeleme.
+23. **Wayback Machine Entegrasyonu:** Web sitesinin geçmiş yıllardaki arşivlenmiş görüntülerinin linklerini getirme.
+24. **Cloudflare / WAF Tespiti:** Sitenin arkasında bir güvenlik duvarı veya CDN olup olmadığını anlama.
+25. **Sayfa Kaynağından Link Çıkarıcı:** Hedef sayfadaki tüm iç (internal) ve dış (external) bağlantıları ayıklama.
+26. **Sayfa İçi E-posta ve Telefon Kazıyıcı:** Web sayfasının HTML kaynağındaki iletişim bilgilerini Regex ile toplama.
+27. **HTML Yorum Satırı (Comment) Bulucu:** Geliştiricilerin kaynak kodda unuttuğu `<!-- yorum -->` satırlarını ayıklama.
+28. **Favicon Hash (MurmurHash) Hesaplayıcı:** Sitenin ikonundan hash üreterek aynı ikonu kullanan diğer sunucuları bulma.
+29. **Yönlendirme (Redirect) Zinciri Takibi:** Bir linkin son hedefe varana kadar geçtiği 301/302 yönlendirmelerini listeleme.
+30. **Açık Dizin (Directory Listing) Kontrolü:** Sunucuda unutulmuş `.git`, `.env`, `backup.zip` gibi kritik dosya/dizin varlığını yoklama.
+
+---
+
+### 3. Kullanıcı Adı ve Sosyal Medya (SOCMINT)
+
+31. **Çoklu Platform Kullanıcı Adı Tarayıcı:** Girilen kullanıcı adını 50+ popüler sitede (GitHub, Instagram, Reddit, Steam vb.) aynı anda kontrol etme.
+32. **GitHub Profil ve Repo Analizi:** Kullanıcının açık repolarını, takipçilerini ve bio bilgilerini çekme.
+33. **GitHub Commit E-posta Çıkarıcı:** Kullanıcının public commit geçmişinden sızan kişisel e-posta adresini yakalama.
+34. **Gravatar Sorgulama:** E-posta adresinin MD5 hash'i üzerinden küresel avatar ve profil bilgisini bulma.
+35. **Discord Snowflake (ID) Çözücü:** Discord kullanıcı veya sunucu ID'sinden hesabın tam oluşturulma tarihini ve saatini hesaplama.
+36. **Discord Davet Kodu Analizi:** Bir davet linkinden sunucu adı, üye sayısı, boost seviyesi ve sunucu ikonunu çekme.
+37. **Steam ID Dönüştürücü:** Steam64, Steam3, Custom URL ve profil bilgilerini birbirine dönüştürme.
+38. **Reddit Kullanıcı Analizi:** Kullanıcının en çok aktif olduğu subreddit'leri ve son yorumlarını özetleme.
+39. **Sosyal Medya Bio/Link Ayıklayıcı:** Profillerdeki Linktree, Beacons gibi çoklu link sayfalarını tespit etme.
+40. **İsimden Kullanıcı Adı (Handle) Türetici:** Ad, soyad ve doğum yılından olası kullanıcı adı kombinasyonları (wordlist) üretme.
+41. **Wikipedia / Ekşi Sözlük Yazar Kontrolü:** Kullanıcı adının sözlük veya ansiklopedi platformlarındaki katkılarını arama.
+42. **YouTube Kanal ID ve Meta Çıkarıcı:** Kanal linkinden gizli Channel ID, oluşturulma tarihi ve kapak görsellerini alma.
+43. **Telegram Açık Kanal/Grup Ön İzleme:** Bir `t.me/` linkinden grup açıklaması ve üye sayısını kazıma.
+44. **Twitch Kanal Bilgisi Sorgulama:** Yayıncının hesap oluşturulma tarihi ve partnerlik durumunu kontrol etme.
+45. **Keybase / PGP Anahtar Sorgulama:** Kullanıcının doğrulanmış kriptografik kimliklerini ve bağlı sosyal hesaplarını bulma.
+
+---
+
+### 4. E-posta ve Telefon İstihbaratı
+
+46. **E-posta Format ve Sözdizimi Doğrulama:** Adresin standartlara uygun olup olmadığını kontrol etme.
+47. **E-posta MX ve Sunucu Kontrolü:** E-postanın bağlı olduğu domainin gerçekten posta alıp alamadığını (MX kaydını) doğrulama.
+48. **Tek Kullanımlık (Temp Mail) Tespiti:** E-postanın 10minutemail, Yopmail gibi geçici servislere ait olup olmadığını bilinen listeyle karşılaştırma.
+49. **Kurumsal E-posta Deseni Oluşturucu:** İsim, soyisim ve şirket domaininden (`ad.soyad@sirket.com`, `asoyad@sirket.com`) olası adresleri üretme.
+50. **Veri İhlali (Data Breach) Sorgulama:** E-postanın geçmiş sızıntılarda yer alıp almadığını açık API'ler üzerinden kontrol etme.
+51. **E-posta Başlığı (Mail Header) Analizörü:** Ham e-posta kaynağından gönderici IP'sini, SPF/DKIM sonuçlarını ve geçtiği sunucuları çıkarma.
+52. **Google Hesap / Servis Kontrolü:** E-postanın Google ekosisteminde aktif bir profili olup olmadığını doğrulama.
+53. **Telefon Numarası Format Doğrulama (E.164):** Numaranın uluslararası standartta geçerli olup olmadığını kontrol etme.
+54. **Ülke ve Alan Kodu Çözümleyici:** Telefon numarasından ülke, bölge/şehir (sabit hatlar için) bilgisi çıkarma.
+55. **Operatör (Carrier) ve Hat Tipi Tespiti:** Numaranın ilk hanelerinden hangi operatöre (Turkcell, Vodafone vb.) ait olduğunu ve Mobil/Sabit/VoIP tipini bulma.
+56. **Telefon Numarası Saat Dilimi Tahmini:** Ülke ve alan koduna göre hedefin bulunduğu yerel saati gösterme.
+57. **WhatsApp / Telegram Doğrudan Link Üretici:** Numaranın mesajlaşma uygulamalarında profili olup olmadığını hızlıca kontrol etmek için `wa.me` ve `t.me` bağlantıları oluşturma.
+58. **Telefon Dork Üretici:** Numaranın internette farklı yazılış biçimleriyle (`05xx`, `+90 5xx`, `5xx-xxx-xx-xx`) Google'da aranması için hazır sorgular üretme.
+59. **Ücretsiz SMS Alım Sitesi Tespiti:** Numaranın internetteki herkese açık "Receive SMS Online" sitelerine ait olup olmadığını kontrol etme.
+60. **Skype / Microsoft Hesap Eşleştirme:** E-posta veya telefon üzerinden eski Skype kullanıcı adını bulma sorgusu.
+
+---
+
+### 5. Dosya, Görsel ve Metadata Analizi
+
+61. **Görsel EXIF Okuyucu:** JPG/PNG/TIFF fotoğraflardan kamera modeli, çekim tarihi, diyafram ve yazılım bilgilerini çıkarma.
+62. **EXIF GPS Koordinat Çözücü:** Fotoğrafta konum verisi varsa bunu Google Maps / OpenStreetMap linkine dönüştürme.
+63. **PDF Metadata Çıkarıcı:** PDF dosyalarından yazar adı (Author), oluşturulma tarihi ve kullanılan PDF motorunu okuma.
+64. **Office Dokümanları (DOCX/XLSX) Analizi:** Dosyayı oluşturan bilgisayarın kullanıcı adını ve son değiştiren kişiyi çıkarma.
+65. **Dosya Hash Hesaplayıcı:** Herhangi bir dosyanın MD5, SHA-1, SHA-256 ve SHA-512 özetlerini (hash) üretme.
+66. **Dosya İmza (Magic Bytes) Kontrolü:** Dosya uzantısı değiştirilmiş olsa bile (örn. `.exe` -> `.jpg`), ilk baytlarından gerçek dosya tipini bulma.
+67. **Strings (Metin) Ayıklayıcı:** İkili (binary) veya çalıştırılabilir bir dosyanın içindeki tüm okunabilir ASCII/UTF-8 metinleri listeleme.
+68. **Görselden Metin Okuma (OCR):** Ekran görüntüsü veya fotoğraflardaki yazıları metne dökme.
+69. **Tersine Görsel Arama Link Üretici:** Bir görsel URL'sini Google Lens, Yandex Images, TinEye ve Bing Visual Search üzerinde tek tıkla aratacak linkler üretme.
+70. **QR Kod ve Barkod Okuyucu:** Görseldeki QR kodu tarayıp içindeki gizli URL veya metni çıkarma.
+71. **Ses/Video Medya Bilgisi (MediaInfo):** Video veya ses dosyalarının codec, bitrate, süre ve kayıt cihazı bilgilerini okuma.
+72. **Steganografi Temel Kontrolü (LSB/Boyut):** Görsel dosyasının sonuna eklenmiş fazladan veri (append edilmiş zip/metin) olup olmadığını kontrol etme.
+73. **Favicon İndirici ve Analizörü:** Hedef sitedeki ikonu indirip boyut ve format bilgisini gösterme.
+74. **Arşiv (ZIP/RAR) İçerik Listeleme:** Şifreli veya şifresiz arşivlerin içindeki dosya isimlerini ve değiştirilme tarihlerini dışarı çıkarmadan okuma.
+75. **EXIF Temizleyici (Bonus Savunma Özelliği):** Kullanıcının kendi paylaşacağı fotoğraflardaki tüm metadata verilerini sıfırlama.
+
+---
+
+### 6. Kodlama, Şifreleme ve Metin Araçları (Encoding & Crypto)
+
+76. **Base64 / Base32 / Base58 Encode & Decode:** Temel veri kodlama ve çözme işlemleri.
+77. **Hexadecimal (Onaltılık) ve Binary Dönüştürücü:** Metinleri Hex ve 0-1 ikili sistemine çevirme/çözme.
+78. **URL ve HTML Entity Encode / Decode:** Web parametrelerindeki `%20`, `&amp;` gibi karakterleri temiz metne çevirme.
+79. **ROT13 / Sezar Şifresi Çözücü:** Tüm kaydırma (shift 1-25) kombinasyonlarını tek seferde listeleyerek şifreli metni kırma.
+80. **JWT (JSON Web Token) Çözücü:** Web uygulamalarındaki token'ların Header ve Payload kısımlarını decode edip içindeki kullanıcı verilerini okuma.
+81. **Hash Tipi Tanımlayıcı (Hash Identifier):** Verilen bir karma dizisinin uzunluk ve formatından MD5, SHA256, Bcrypt veya NTLM olduğunu tahmin etme.
+82. **Unix Timestamp Dönüştürücü:** `1730680000` gibi epoch zaman damgalarını okunabilir tarih ve saate çevirme.
+83. **Evrensel Regex Ayıklayıcı:** Büyük bir metin yığını içinden tüm IP'leri, URL'leri, e-postaları, MAC adreslerini veya kripto cüzdan adreslerini tek tıkla süzme.
+84. **Zararlı Link Zırhlayıcı (Defang / Refang):** Paylaşım güvenliği için `[http://site.com](http://site.com)` adresini `hxxp[://]site[.]com` haline getirme ve tersine çevirme.
+85. **Mors Alfabesi ve ASCII Kod Çevirici:** Metinleri Mors koduna veya ASCII onluk (decimal) değerlerine dönüştürme.
+86. **Unicode / Punycode Dönüştürücü:** IDN homograf saldırılarında kullanılan `xn--` formatındaki sahte domainleri gerçek harflere çevirme.
+87. **Kripto Cüzdan Format Doğrulayıcı:** Metindeki bir dizinin geçerli bir Bitcoin (BTC), Ethereum (ETH) veya Monero (XMR) adresi olup olmadığını kontrol etme.
+88. **Otomatik Kod Çözücü (Magic Decoder):** İç içe kodlanmış (örn. önce Base64, sonra Hex yapılmış) bir veriyi otomatik tanıyıp düz metne ulaşana kadar çözme.
+
+---
+
+### 7. Arama Motoru (Dorking), Yardımcı Araçlar ve Raporlama
+
+89. **Google Dork Oluşturucu:** Hedef domain için `site:`, `filetype:pdf`, `intitle:"index of"`, `inurl:admin` gibi gelişmiş arama sorgularını otomatik üretme.
+90. **GitHub & GitLab Dork Oluşturucu:** Hedef şirketin veya kişinin yanlışlıkla sızdırdığı API anahtarlarını (`API_KEY`, `password`, `.env`) kod depolarında aramak için sorgu hazırlama.
+91. **Pastebin & Kod Paylaşım Sitesi Tarayıcı:** Hedef anahtar kelimeyi veya e-postayı açık metin paylaşım sitelerinde aratma.
+92. **Kısaltılmış URL (Short URL) Çözücü:** `bit.ly`, `tinyurl` gibi linklere tıklamadan arka planda nereye yönlendiğini (hedef URL'yi) gösterme.
+93. **Açık Wi-Fi / BSSID Konum Sorgulama:** Bir modemin MAC adresinden (BSSID) açık veritabanlarını kullanarak fiziksel konumunu bulma.
+94. **Uçuş Kodu ve Gemi (AIS) Sorgu Linkleyici:** Girilen kuyruk numarası veya gemi IMO numarasını radar sitelerinde doğrudan açacak bağlantılar üretme.
+95. **Plaka / Ülke Kodu Rehberi:** Araç plakaları, uluslararası telefon kodları ve ISO ülke kısaltmaları için dahili hızlı sözlük.
+96. **Karanlık Web (Tor / .onion) Durum Kontrolü:** Yerel bir Tor proxy üzerinden `.onion` uzantılı bir sitenin aktif olup olmadığını kontrol etme.
+97. **User-Agent Havuzu (Rotasyonu):** Aracın web sitelerinden engellenmemesi için her istekte rastgele tarayıcı kimliği (User-Agent) kullanması.
+98. **Proxy Desteği (HTTP / SOCKS5):** Tüm OSINT sorgularını kullanıcının belirlediği bir proxy üzerinden geçirme ayarı.
+99. **Çoklu İş Parçacığı (Multi-threading / Async):** Port tarama veya kullanıcı adı arama gibi işlemleri aynı anda hızlıca yapabilme.
+100. **JSON / CSV / TXT Dışa Aktarma:** Bulunan tüm sonuçları başka araçlarda kullanmak üzere yapılandırılmış veri olarak kaydetme.
+101. **HTML / PDF Rapor Oluşturucu:** Hedef hakkında toplanan tüm istihbaratı şık ve okunabilir tek bir özet rapora dönüştürme.
+102. **Oturum (Case / Workspace) Kaydetme:** Yarım kalan bir araştırmayı kaydedip daha sonra kaldığı yerden devam edebilme.
+103. **Merkezi API Anahtarı Yöneticisi:** Kullanıcının kendi Shodan, VirusTotal veya HaveIBeenPwned API anahtarlarını girebileceği ayarlar menüsü.
+104. **Sorgu Geçmişi ve Loglama:** Araç içinde yapılan tüm aramaları zaman damgasıyla birlikte yerel olarak kaydetme.
+105. **Toplu Hedef (Batch) İşleme:** Tek bir IP veya kullanıcı adı yerine bir `.txt` dosyasından yüzlerce hedefi sırayla okuyup tarama.
+
+Geliştirmeye başlarken önce dış API gerektirmeyen **Ağ, DNS, Encoding ve Regex/Scraping** modüllerini çekirdek olarak kurup, ardından sosyal medya ve üçüncü parti entegrasyonları katman katman ekleyebilirsin.

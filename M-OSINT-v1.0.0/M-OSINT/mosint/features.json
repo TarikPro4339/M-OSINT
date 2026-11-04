@@ -1,0 +1,668 @@
+[
+  {
+    "id": 1,
+    "name": "IP Geolocation",
+    "description": "IP adresinden ülke, şehir, posta kodu ve koordinat tespiti.",
+    "category": 1
+  },
+  {
+    "id": 2,
+    "name": "ASN & ISP Sorgulama",
+    "description": "IP'nin bağlı olduğu Otonom Sistem Numarası ve internet servis sağlayıcısını bulma.",
+    "category": 1
+  },
+  {
+    "id": 3,
+    "name": "Ters IP (Reverse IP) Arama",
+    "description": "Aynı sunucuda (IP'de) barınan diğer web sitelerini listeleme.",
+    "category": 1
+  },
+  {
+    "id": 4,
+    "name": "MAC Adresi (OUI) Sorgulama",
+    "description": "MAC adresinin ilk 3 oktetinden cihaz üreticisini (Vendor) bulma.",
+    "category": 1
+  },
+  {
+    "id": 5,
+    "name": "Port Tarayıcı (Port Scanner)",
+    "description": "Hedef IP üzerindeki açık TCP/UDP portlarını (21, 22, 80, 443, 3389 vb.) tarama.",
+    "category": 1
+  },
+  {
+    "id": 6,
+    "name": "Banner Grabbing",
+    "description": "Açık portlardan çalışan servislerin isim ve versiyon bilgilerini çekme.",
+    "category": 1
+  },
+  {
+    "id": 7,
+    "name": "VPN / Proxy / Tor Tespiti",
+    "description": "IP adresinin bilinen bir anonimleştirici ağa veya veri merkezine (Datacenter) ait olup olmadığını kontrol etme.",
+    "category": 1
+  },
+  {
+    "id": 8,
+    "name": "Kara Liste (Blacklist / DNSBL) Kontrolü",
+    "description": "IP'nin spam veya zararlı aktivite listelerinde olup olmadığını sorgulama.",
+    "category": 1
+  },
+  {
+    "id": 9,
+    "name": "Traceroute / Ağ Yolu Analizi",
+    "description": "Paketin hedefe ulaşana kadar geçtiği düğümleri (hop) haritalama.",
+    "category": 1
+  },
+  {
+    "id": 10,
+    "name": "Ping & Gecikme (Latency) Testi",
+    "description": "Hedef sunucunun aktiflik ve yanıt süresi kontrolü.",
+    "category": 1
+  },
+  {
+    "id": 11,
+    "name": "Alt Ağ (Subnet / CIDR) Hesaplayıcı",
+    "description": "Verilen IP bloğunun ağ aralığını ve kullanılabilir IP sayısını çıkarma.",
+    "category": 1
+  },
+  {
+    "id": 12,
+    "name": "IPv4 - IPv6 Dönüştürücü ve Çözümleyici",
+    "description": "IP formatları arası dönüşüm ve uyumluluk analizi.",
+    "category": 1
+  },
+  {
+    "id": 13,
+    "name": "Shodan / Censys Sorgu Üretici",
+    "description": "Hedef IP bloğu veya servis için hazır arama filtreleri (dork) oluşturma.",
+    "category": 1
+  },
+  {
+    "id": 14,
+    "name": "BGP Prefix Sorgulama",
+    "description": "Kurumun sahip olduğu tüm IP bloklarını listeleme.",
+    "category": 1
+  },
+  {
+    "id": 15,
+    "name": "Genel (Public) IP Bilgisi",
+    "description": "Aracı kullanan kişinin kendi dış IP ve ağ bilgisini göstermesi.",
+    "category": 1
+  },
+  {
+    "id": 16,
+    "name": "WHOIS Sorgulama",
+    "description": "Domain kayıt tarihi, bitiş tarihi ve kayıt kuruluşu (Registrar) bilgilerini çekme.",
+    "category": 2
+  },
+  {
+    "id": 17,
+    "name": "DNS Kayıt Analizi",
+    "description": "A, AAAA, MX, TXT, NS, CNAME ve SOA kayıtlarını tam listeleme.",
+    "category": 2
+  },
+  {
+    "id": 18,
+    "name": "Alt Alan Adı (Subdomain) Tespiti",
+    "description": "Sertifika şeffaflığı (crt.sh) veya kelime listesi (wordlist) ile alt alan adlarını bulma.",
+    "category": 2
+  },
+  {
+    "id": 19,
+    "name": "SSL/TLS Sertifika Analizi",
+    "description": "Sertifikanın kime verildiği, geçerlilik süresi ve alternatif isimlerini (SAN) inceleme.",
+    "category": 2
+  },
+  {
+    "id": 20,
+    "name": "HTTP Başlık (Header) Analizi",
+    "description": "Sunucudan dönen güvenlik başlıklarını (HSTS, CSP, X-Frame-Options) ve sunucu bilgisini okuma.",
+    "category": 2
+  },
+  {
+    "id": 21,
+    "name": "Web Teknoloji Tespiti (Tech Stack)",
+    "description": "Sitede kullanılan CMS (WordPress vb.), JS kütüphaneleri ve web sunucusunu (Nginx, Apache) belirleme.",
+    "category": 2
+  },
+  {
+    "id": 22,
+    "name": "Robots.txt ve Sitemap.xml Okuyucu",
+    "description": "Arama motorlarından gizlenen dizinleri ve site haritasını otomatik çekip listeleme.",
+    "category": 2
+  },
+  {
+    "id": 23,
+    "name": "Wayback Machine Entegrasyonu",
+    "description": "Web sitesinin geçmiş yıllardaki arşivlenmiş görüntülerinin linklerini getirme.",
+    "category": 2
+  },
+  {
+    "id": 24,
+    "name": "Cloudflare / WAF Tespiti",
+    "description": "Sitenin arkasında bir güvenlik duvarı veya CDN olup olmadığını anlama.",
+    "category": 2
+  },
+  {
+    "id": 25,
+    "name": "Sayfa Kaynağından Link Çıkarıcı",
+    "description": "Hedef sayfadaki tüm iç (internal) ve dış (external) bağlantıları ayıklama.",
+    "category": 2
+  },
+  {
+    "id": 26,
+    "name": "Sayfa İçi E-posta ve Telefon Kazıyıcı",
+    "description": "Web sayfasının HTML kaynağındaki iletişim bilgilerini Regex ile toplama.",
+    "category": 2
+  },
+  {
+    "id": 27,
+    "name": "HTML Yorum Satırı (Comment) Bulucu",
+    "description": "Geliştiricilerin kaynak kodda unuttuğu `<!-- yorum -->` satırlarını ayıklama.",
+    "category": 2
+  },
+  {
+    "id": 28,
+    "name": "Favicon Hash (MurmurHash) Hesaplayıcı",
+    "description": "Sitenin ikonundan hash üreterek aynı ikonu kullanan diğer sunucuları bulma.",
+    "category": 2
+  },
+  {
+    "id": 29,
+    "name": "Yönlendirme (Redirect) Zinciri Takibi",
+    "description": "Bir linkin son hedefe varana kadar geçtiği 301/302 yönlendirmelerini listeleme.",
+    "category": 2
+  },
+  {
+    "id": 30,
+    "name": "Açık Dizin (Directory Listing) Kontrolü",
+    "description": "Sunucuda unutulmuş `.git`, `.env`, `backup.zip` gibi kritik dosya/dizin varlığını yoklama.",
+    "category": 2
+  },
+  {
+    "id": 31,
+    "name": "Çoklu Platform Kullanıcı Adı Tarayıcı",
+    "description": "Girilen kullanıcı adını 50+ popüler sitede (GitHub, Instagram, Reddit, Steam vb.) aynı anda kontrol etme.",
+    "category": 3
+  },
+  {
+    "id": 32,
+    "name": "GitHub Profil ve Repo Analizi",
+    "description": "Kullanıcının açık repolarını, takipçilerini ve bio bilgilerini çekme.",
+    "category": 3
+  },
+  {
+    "id": 33,
+    "name": "GitHub Commit E-posta Çıkarıcı",
+    "description": "Kullanıcının public commit geçmişinden sızan kişisel e-posta adresini yakalama.",
+    "category": 3
+  },
+  {
+    "id": 34,
+    "name": "Gravatar Sorgulama",
+    "description": "E-posta adresinin MD5 hash'i üzerinden küresel avatar ve profil bilgisini bulma.",
+    "category": 3
+  },
+  {
+    "id": 35,
+    "name": "Discord Snowflake (ID) Çözücü",
+    "description": "Discord kullanıcı veya sunucu ID'sinden hesabın tam oluşturulma tarihini ve saatini hesaplama.",
+    "category": 3
+  },
+  {
+    "id": 36,
+    "name": "Discord Davet Kodu Analizi",
+    "description": "Bir davet linkinden sunucu adı, üye sayısı, boost seviyesi ve sunucu ikonunu çekme.",
+    "category": 3
+  },
+  {
+    "id": 37,
+    "name": "Steam ID Dönüştürücü",
+    "description": "Steam64, Steam3, Custom URL ve profil bilgilerini birbirine dönüştürme.",
+    "category": 3
+  },
+  {
+    "id": 38,
+    "name": "Reddit Kullanıcı Analizi",
+    "description": "Kullanıcının en çok aktif olduğu subreddit'leri ve son yorumlarını özetleme.",
+    "category": 3
+  },
+  {
+    "id": 39,
+    "name": "Sosyal Medya Bio/Link Ayıklayıcı",
+    "description": "Profillerdeki Linktree, Beacons gibi çoklu link sayfalarını tespit etme.",
+    "category": 3
+  },
+  {
+    "id": 40,
+    "name": "İsimden Kullanıcı Adı (Handle) Türetici",
+    "description": "Ad, soyad ve doğum yılından olası kullanıcı adı kombinasyonları (wordlist) üretme.",
+    "category": 3
+  },
+  {
+    "id": 41,
+    "name": "Wikipedia / Ekşi Sözlük Yazar Kontrolü",
+    "description": "Kullanıcı adının sözlük veya ansiklopedi platformlarındaki katkılarını arama.",
+    "category": 3
+  },
+  {
+    "id": 42,
+    "name": "YouTube Kanal ID ve Meta Çıkarıcı",
+    "description": "Kanal linkinden gizli Channel ID, oluşturulma tarihi ve kapak görsellerini alma.",
+    "category": 3
+  },
+  {
+    "id": 43,
+    "name": "Telegram Açık Kanal/Grup Ön İzleme",
+    "description": "Bir `t.me/` linkinden grup açıklaması ve üye sayısını kazıma.",
+    "category": 3
+  },
+  {
+    "id": 44,
+    "name": "Twitch Kanal Bilgisi Sorgulama",
+    "description": "Yayıncının hesap oluşturulma tarihi ve partnerlik durumunu kontrol etme.",
+    "category": 3
+  },
+  {
+    "id": 45,
+    "name": "Keybase / PGP Anahtar Sorgulama",
+    "description": "Kullanıcının doğrulanmış kriptografik kimliklerini ve bağlı sosyal hesaplarını bulma.",
+    "category": 3
+  },
+  {
+    "id": 46,
+    "name": "E-posta Format ve Sözdizimi Doğrulama",
+    "description": "Adresin standartlara uygun olup olmadığını kontrol etme.",
+    "category": 4
+  },
+  {
+    "id": 47,
+    "name": "E-posta MX ve Sunucu Kontrolü",
+    "description": "E-postanın bağlı olduğu domainin gerçekten posta alıp alamadığını (MX kaydını) doğrulama.",
+    "category": 4
+  },
+  {
+    "id": 48,
+    "name": "Tek Kullanımlık (Temp Mail) Tespiti",
+    "description": "E-postanın 10minutemail, Yopmail gibi geçici servislere ait olup olmadığını bilinen listeyle karşılaştırma.",
+    "category": 4
+  },
+  {
+    "id": 49,
+    "name": "Kurumsal E-posta Deseni Oluşturucu",
+    "description": "İsim, soyisim ve şirket domaininden (`ad.soyad@sirket.com`, `asoyad@sirket.com`) olası adresleri üretme.",
+    "category": 4
+  },
+  {
+    "id": 50,
+    "name": "Veri İhlali (Data Breach) Sorgulama",
+    "description": "E-postanın geçmiş sızıntılarda yer alıp almadığını açık API'ler üzerinden kontrol etme.",
+    "category": 4
+  },
+  {
+    "id": 51,
+    "name": "E-posta Başlığı (Mail Header) Analizörü",
+    "description": "Ham e-posta kaynağından gönderici IP'sini, SPF/DKIM sonuçlarını ve geçtiği sunucuları çıkarma.",
+    "category": 4
+  },
+  {
+    "id": 52,
+    "name": "Google Hesap / Servis Kontrolü",
+    "description": "E-postanın Google ekosisteminde aktif bir profili olup olmadığını doğrulama.",
+    "category": 4
+  },
+  {
+    "id": 53,
+    "name": "Telefon Numarası Format Doğrulama (E.164)",
+    "description": "Numaranın uluslararası standartta geçerli olup olmadığını kontrol etme.",
+    "category": 4
+  },
+  {
+    "id": 54,
+    "name": "Ülke ve Alan Kodu Çözümleyici",
+    "description": "Telefon numarasından ülke, bölge/şehir (sabit hatlar için) bilgisi çıkarma.",
+    "category": 4
+  },
+  {
+    "id": 55,
+    "name": "Operatör (Carrier) ve Hat Tipi Tespiti",
+    "description": "Numaranın ilk hanelerinden hangi operatöre (Turkcell, Vodafone vb.) ait olduğunu ve Mobil/Sabit/VoIP tipini bulma.",
+    "category": 4
+  },
+  {
+    "id": 56,
+    "name": "Telefon Numarası Saat Dilimi Tahmini",
+    "description": "Ülke ve alan koduna göre hedefin bulunduğu yerel saati gösterme.",
+    "category": 4
+  },
+  {
+    "id": 57,
+    "name": "WhatsApp / Telegram Doğrudan Link Üretici",
+    "description": "Numaranın mesajlaşma uygulamalarında profili olup olmadığını hızlıca kontrol etmek için `wa.me` ve `t.me` bağlantıları oluşturma.",
+    "category": 4
+  },
+  {
+    "id": 58,
+    "name": "Telefon Dork Üretici",
+    "description": "Numaranın internette farklı yazılış biçimleriyle (`05xx`, `+90 5xx`, `5xx-xxx-xx-xx`) Google'da aranması için hazır sorgular üretme.",
+    "category": 4
+  },
+  {
+    "id": 59,
+    "name": "Ücretsiz SMS Alım Sitesi Tespiti",
+    "description": "Numaranın internetteki herkese açık \"Receive SMS Online\" sitelerine ait olup olmadığını kontrol etme.",
+    "category": 4
+  },
+  {
+    "id": 60,
+    "name": "Skype / Microsoft Hesap Eşleştirme",
+    "description": "E-posta veya telefon üzerinden eski Skype kullanıcı adını bulma sorgusu.",
+    "category": 4
+  },
+  {
+    "id": 61,
+    "name": "Görsel EXIF Okuyucu",
+    "description": "JPG/PNG/TIFF fotoğraflardan kamera modeli, çekim tarihi, diyafram ve yazılım bilgilerini çıkarma.",
+    "category": 5
+  },
+  {
+    "id": 62,
+    "name": "EXIF GPS Koordinat Çözücü",
+    "description": "Fotoğrafta konum verisi varsa bunu Google Maps / OpenStreetMap linkine dönüştürme.",
+    "category": 5
+  },
+  {
+    "id": 63,
+    "name": "PDF Metadata Çıkarıcı",
+    "description": "PDF dosyalarından yazar adı (Author), oluşturulma tarihi ve kullanılan PDF motorunu okuma.",
+    "category": 5
+  },
+  {
+    "id": 64,
+    "name": "Office Dokümanları (DOCX/XLSX) Analizi",
+    "description": "Dosyayı oluşturan bilgisayarın kullanıcı adını ve son değiştiren kişiyi çıkarma.",
+    "category": 5
+  },
+  {
+    "id": 65,
+    "name": "Dosya Hash Hesaplayıcı",
+    "description": "Herhangi bir dosyanın MD5, SHA-1, SHA-256 ve SHA-512 özetlerini (hash) üretme.",
+    "category": 5
+  },
+  {
+    "id": 66,
+    "name": "Dosya İmza (Magic Bytes) Kontrolü",
+    "description": "Dosya uzantısı değiştirilmiş olsa bile (örn. `.exe` -> `.jpg`), ilk baytlarından gerçek dosya tipini bulma.",
+    "category": 5
+  },
+  {
+    "id": 67,
+    "name": "Strings (Metin) Ayıklayıcı",
+    "description": "İkili (binary) veya çalıştırılabilir bir dosyanın içindeki tüm okunabilir ASCII/UTF-8 metinleri listeleme.",
+    "category": 5
+  },
+  {
+    "id": 68,
+    "name": "Görselden Metin Okuma (OCR)",
+    "description": "Ekran görüntüsü veya fotoğraflardaki yazıları metne dökme.",
+    "category": 5
+  },
+  {
+    "id": 69,
+    "name": "Tersine Görsel Arama Link Üretici",
+    "description": "Bir görsel URL'sini Google Lens, Yandex Images, TinEye ve Bing Visual Search üzerinde tek tıkla aratacak linkler üretme.",
+    "category": 5
+  },
+  {
+    "id": 70,
+    "name": "QR Kod ve Barkod Okuyucu",
+    "description": "Görseldeki QR kodu tarayıp içindeki gizli URL veya metni çıkarma.",
+    "category": 5
+  },
+  {
+    "id": 71,
+    "name": "Ses/Video Medya Bilgisi (MediaInfo)",
+    "description": "Video veya ses dosyalarının codec, bitrate, süre ve kayıt cihazı bilgilerini okuma.",
+    "category": 5
+  },
+  {
+    "id": 72,
+    "name": "Steganografi Temel Kontrolü (LSB/Boyut)",
+    "description": "Görsel dosyasının sonuna eklenmiş fazladan veri (append edilmiş zip/metin) olup olmadığını kontrol etme.",
+    "category": 5
+  },
+  {
+    "id": 73,
+    "name": "Favicon İndirici ve Analizörü",
+    "description": "Hedef sitedeki ikonu indirip boyut ve format bilgisini gösterme.",
+    "category": 5
+  },
+  {
+    "id": 74,
+    "name": "Arşiv (ZIP/RAR) İçerik Listeleme",
+    "description": "Şifreli veya şifresiz arşivlerin içindeki dosya isimlerini ve değiştirilme tarihlerini dışarı çıkarmadan okuma.",
+    "category": 5
+  },
+  {
+    "id": 75,
+    "name": "EXIF Temizleyici (Bonus Savunma Özelliği)",
+    "description": "Kullanıcının kendi paylaşacağı fotoğraflardaki tüm metadata verilerini sıfırlama.",
+    "category": 5
+  },
+  {
+    "id": 76,
+    "name": "Base64 / Base32 / Base58 Encode & Decode",
+    "description": "Temel veri kodlama ve çözme işlemleri.",
+    "category": 6
+  },
+  {
+    "id": 77,
+    "name": "Hexadecimal (Onaltılık) ve Binary Dönüştürücü",
+    "description": "Metinleri Hex ve 0-1 ikili sistemine çevirme/çözme.",
+    "category": 6
+  },
+  {
+    "id": 78,
+    "name": "URL ve HTML Entity Encode / Decode",
+    "description": "Web parametrelerindeki `%20`, `&amp;` gibi karakterleri temiz metne çevirme.",
+    "category": 6
+  },
+  {
+    "id": 79,
+    "name": "ROT13 / Sezar Şifresi Çözücü",
+    "description": "Tüm kaydırma (shift 1-25) kombinasyonlarını tek seferde listeleyerek şifreli metni kırma.",
+    "category": 6
+  },
+  {
+    "id": 80,
+    "name": "JWT (JSON Web Token) Çözücü",
+    "description": "Web uygulamalarındaki token'ların Header ve Payload kısımlarını decode edip içindeki kullanıcı verilerini okuma.",
+    "category": 6
+  },
+  {
+    "id": 81,
+    "name": "Hash Tipi Tanımlayıcı (Hash Identifier)",
+    "description": "Verilen bir karma dizisinin uzunluk ve formatından MD5, SHA256, Bcrypt veya NTLM olduğunu tahmin etme.",
+    "category": 6
+  },
+  {
+    "id": 82,
+    "name": "Unix Timestamp Dönüştürücü",
+    "description": "`1730680000` gibi epoch zaman damgalarını okunabilir tarih ve saate çevirme.",
+    "category": 6
+  },
+  {
+    "id": 83,
+    "name": "Evrensel Regex Ayıklayıcı",
+    "description": "Büyük bir metin yığını içinden tüm IP'leri, URL'leri, e-postaları, MAC adreslerini veya kripto cüzdan adreslerini tek tıkla süzme.",
+    "category": 6
+  },
+  {
+    "id": 84,
+    "name": "Zararlı Link Zırhlayıcı (Defang / Refang)",
+    "description": "Paylaşım güvenliği için `[http://site.com](http://site.com)` adresini `hxxp[://]site[.]com` haline getirme ve tersine çevirme.",
+    "category": 6
+  },
+  {
+    "id": 85,
+    "name": "Mors Alfabesi ve ASCII Kod Çevirici",
+    "description": "Metinleri Mors koduna veya ASCII onluk (decimal) değerlerine dönüştürme.",
+    "category": 6
+  },
+  {
+    "id": 86,
+    "name": "Unicode / Punycode Dönüştürücü",
+    "description": "IDN homograf saldırılarında kullanılan `xn--` formatındaki sahte domainleri gerçek harflere çevirme.",
+    "category": 6
+  },
+  {
+    "id": 87,
+    "name": "Kripto Cüzdan Format Doğrulayıcı",
+    "description": "Metindeki bir dizinin geçerli bir Bitcoin (BTC), Ethereum (ETH) veya Monero (XMR) adresi olup olmadığını kontrol etme.",
+    "category": 6
+  },
+  {
+    "id": 88,
+    "name": "Otomatik Kod Çözücü (Magic Decoder)",
+    "description": "İç içe kodlanmış (örn. önce Base64, sonra Hex yapılmış) bir veriyi otomatik tanıyıp düz metne ulaşana kadar çözme.",
+    "category": 6
+  },
+  {
+    "id": 89,
+    "name": "Google Dork Oluşturucu",
+    "description": "Hedef domain için `site:`, `filetype:pdf`, `intitle:\"index of\"`, `inurl:admin` gibi gelişmiş arama sorgularını otomatik üretme.",
+    "category": 7
+  },
+  {
+    "id": 90,
+    "name": "GitHub & GitLab Dork Oluşturucu",
+    "description": "Hedef şirketin veya kişinin yanlışlıkla sızdırdığı API anahtarlarını (`API_KEY`, `password`, `.env`) kod depolarında aramak için sorgu hazırlama.",
+    "category": 7
+  },
+  {
+    "id": 91,
+    "name": "Pastebin & Kod Paylaşım Sitesi Tarayıcı",
+    "description": "Hedef anahtar kelimeyi veya e-postayı açık metin paylaşım sitelerinde aratma.",
+    "category": 7
+  },
+  {
+    "id": 92,
+    "name": "Kısaltılmış URL (Short URL) Çözücü",
+    "description": "`bit.ly`, `tinyurl` gibi linklere tıklamadan arka planda nereye yönlendiğini (hedef URL'yi) gösterme.",
+    "category": 7
+  },
+  {
+    "id": 93,
+    "name": "Açık Wi-Fi / BSSID Konum Sorgulama",
+    "description": "Bir modemin MAC adresinden (BSSID) açık veritabanlarını kullanarak fiziksel konumunu bulma.",
+    "category": 7
+  },
+  {
+    "id": 94,
+    "name": "Uçuş Kodu ve Gemi (AIS) Sorgu Linkleyici",
+    "description": "Girilen kuyruk numarası veya gemi IMO numarasını radar sitelerinde doğrudan açacak bağlantılar üretme.",
+    "category": 7
+  },
+  {
+    "id": 95,
+    "name": "Plaka / Ülke Kodu Rehberi",
+    "description": "Araç plakaları, uluslararası telefon kodları ve ISO ülke kısaltmaları için dahili hızlı sözlük.",
+    "category": 7
+  },
+  {
+    "id": 96,
+    "name": "Karanlık Web (Tor / .onion) Durum Kontrolü",
+    "description": "Yerel bir Tor proxy üzerinden `.onion` uzantılı bir sitenin aktif olup olmadığını kontrol etme.",
+    "category": 7
+  },
+  {
+    "id": 97,
+    "name": "User-Agent Havuzu (Rotasyonu)",
+    "description": "Aracın web sitelerinden engellenmemesi için her istekte rastgele tarayıcı kimliği (User-Agent) kullanması.",
+    "category": 7
+  },
+  {
+    "id": 98,
+    "name": "Proxy Desteği (HTTP / SOCKS5)",
+    "description": "Tüm OSINT sorgularını kullanıcının belirlediği bir proxy üzerinden geçirme ayarı.",
+    "category": 7
+  },
+  {
+    "id": 99,
+    "name": "Çoklu İş Parçacığı (Multi-threading / Async)",
+    "description": "Port tarama veya kullanıcı adı arama gibi işlemleri aynı anda hızlıca yapabilme.",
+    "category": 7
+  },
+  {
+    "id": 100,
+    "name": "JSON / CSV / TXT Dışa Aktarma",
+    "description": "Bulunan tüm sonuçları başka araçlarda kullanmak üzere yapılandırılmış veri olarak kaydetme.",
+    "category": 7
+  },
+  {
+    "id": 101,
+    "name": "HTML / PDF Rapor Oluşturucu",
+    "description": "Hedef hakkında toplanan tüm istihbaratı şık ve okunabilir tek bir özet rapora dönüştürme.",
+    "category": 7
+  },
+  {
+    "id": 102,
+    "name": "Oturum (Case / Workspace) Kaydetme",
+    "description": "Yarım kalan bir araştırmayı kaydedip daha sonra kaldığı yerden devam edebilme.",
+    "category": 7
+  },
+  {
+    "id": 103,
+    "name": "Merkezi API Anahtarı Yöneticisi",
+    "description": "Kullanıcının kendi Shodan, VirusTotal veya HaveIBeenPwned API anahtarlarını girebileceği ayarlar menüsü.",
+    "category": 7
+  },
+  {
+    "id": 104,
+    "name": "Sorgu Geçmişi ve Loglama",
+    "description": "Araç içinde yapılan tüm aramaları zaman damgasıyla birlikte yerel olarak kaydetme.",
+    "category": 7
+  },
+  {
+    "id": 105,
+    "name": "Toplu Hedef (Batch) İşleme",
+    "description": "Tek bir IP veya kullanıcı adı yerine bir `.txt` dosyasından yüzlerce hedefi sırayla okuyup tarama.",
+    "category": 7
+  },
+  {
+    "id": 106,
+    "name": "URL Takip Parametresi Temizleyici",
+    "description": "URL bileşenlerini ayrıştırır; utm_*, gclid ve bilinen takip parametrelerini kaldırır. URL ziyaret edilmez.",
+    "category": 2
+  },
+  {
+    "id": 107,
+    "name": "IOC Listesi Karşılaştırıcı",
+    "description": "İki satırlık IOC listesinin ortak ve farklı girdilerini bulur. Listeleri ayrı bir --- satırı ile ayırın; harf duyarlı tam eşleşme kullanılır.",
+    "category": 7
+  },
+  {
+    "id": 108,
+    "name": "E-posta Maskeleyici",
+    "description": "Metindeki ASCII e-posta adaylarının yerel kısmını maskeler; diğer kişisel verileri anonimleştirmez.",
+    "category": 4
+  },
+  {
+    "id": 109,
+    "name": "Dosya SHA-256 Doğrulayıcı",
+    "description": "Seçilen dosyanın SHA-256 özetini girilen güvenilir beklenen özetle karşılaştırır; zararsızlık tespiti yapmaz.",
+    "category": 5
+  },
+  {
+    "id": 110,
+    "name": "Metin Fark Analizi",
+    "description": "İki metni satır bazında karşılaştırarak unified diff üretir. Metinleri ayrı bir --- satırı ile ayırın; CRLF/LF ve son satır sonlandırıcısı farkı yok sayılır.",
+    "category": 7
+  },
+  {
+    "id": 111,
+    "name": "OathNet E-posta İhlal Özeti",
+    "description": "Resmi OathNet V2 API ile tek e-posta adresi için ilk sayfanın kaynak adlarını ve kayıt sayılarını özetler; ham sızıntı satırlarını göstermez.",
+    "category": 4
+  }
+]
